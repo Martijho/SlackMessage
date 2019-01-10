@@ -1,1 +1,2 @@
 from slackmessage.send import send_message
+from slackmessage.messenger import SlackMessenger
