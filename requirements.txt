@@ -1,0 +1,2 @@
+slackclient
+opencv-python
