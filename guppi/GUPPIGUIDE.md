@@ -24,13 +24,18 @@ from slackmessage import Guppi
 guppi = Guppi()
 
 # Sending message to channel
-guppi.send('6345 items in to-do list', 'testchannel'
+guppi.send('6345 items in to-do list',  # Message
+           'testchannel')               # channel name
 
 # Send file to channel
-guppi.send_file('/home/MyUser/Desktop/totally_not_nudes.jpg', 'totally_not_my_boss', message='Totally not asking for a promotion')
+guppi.send_file('/home/MyUser/Desktop/totally_not_nudes.jpg',  # File path
+                'totally_not_my_boss',                         # channel name
+                message='Totally not asking for a promotion')  # string to preced file
 
 # Send image to channel
 import cv2
 image = cv2.imread('/home/MyUser/Desktop/totally_not_nudes.jpg')
-guppi.send_image(image, 'totally_not_HR', message='Im sorry')
+guppi.send_image(image,                 # image array 
+                 'totally_not_HR',      # channel name
+                 message='Im sorry')    # string to preced image
 ```

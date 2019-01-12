@@ -1,8 +1,11 @@
 # SlackMessage
 
+Simple communication with slack channel. 
+See [GUPPI](guppi/GUPPIGUIDE.md) for sending files and images
+
 ### Install
 1. Download and pip install this repo
-2. Aps install curl by rinning 
+2. Apt install curl by running 
 ```bash
 sudo apt install curl
 ```

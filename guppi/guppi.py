@@ -19,6 +19,11 @@ class Guppi:
         self.debug = debug
 
     def send(self, message, channel):
+        '''
+        Send a string to slack channel
+        :param message: Sting to be sent
+        :param channel: Slack channel name
+        '''
         resp = self._client.api_call(
             "chat.postMessage",
             channel=channel,
@@ -30,6 +35,12 @@ class Guppi:
             warnings.warn(warn_message)
 
     def send_image(self, image, channel, message=''):
+        '''
+        Send image (array) to channel
+        :param image: image
+        :param channel: channel name
+        :param message: message to preced image
+        '''
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         image_string = cv2.imencode('.jpg', image)[1].tostring()
 
@@ -46,6 +57,12 @@ class Guppi:
             warnings.warn(warn_message)
 
     def send_file(self, file_path, channel, message=''):
+        '''
+        Send a file to a channel
+        :param file_path: path to file
+        :param channel: channel name
+        :param message: message to preced file
+        '''
         resp =self._client.api_call(
             'files.upload',
             channels=channel,
