@@ -1,7 +1,7 @@
 # SlackMessage
 
 Simple communication with slack channel. 
-See [GUPPI](guppi/GUPPIGUIDE.md) for sending files and images
+See [GUPPI](guppi/README.md) for sending files and images
 
 ### Install
 1. Download and pip install this repo
