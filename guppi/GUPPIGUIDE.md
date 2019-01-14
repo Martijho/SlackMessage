@@ -20,7 +20,7 @@ source ~/.bashrc
 
 ### Example use
 ```python
-from slackmessage import Guppi
+from guppi import Guppi
 guppi = Guppi()
 
 # Sending message to channel

@@ -7,5 +7,5 @@ setup(
   author='Martin Hovin',
   author_email='MartinHovin91@gmail.com',
   url='https://github.com/Martijho/SlackMessage',
-  packages=['slackmessage', 'guppi']#find_packages(exclude=('test',)),
+  packages=['slackmessage', 'guppi']
 )
