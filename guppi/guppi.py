@@ -3,7 +3,7 @@ import cv2
 
 import os
 import warnings
-
+from pathlib import Path
 
 class Guppi:
     def __init__(self, debug=False):
@@ -39,7 +39,7 @@ class Guppi:
         Send image (array) to channel
         :param image: image
         :param channel: channel name
-        :param message: message to preced image
+        :param message: message to precede image
         '''
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         image_string = cv2.imencode('.jpg', image)[1].tostring()
@@ -61,12 +61,14 @@ class Guppi:
         Send a file to a channel
         :param file_path: path to file
         :param channel: channel name
-        :param message: message to preced file
+        :param message: message to precede file
         '''
+
+        filename = 'file' + Path(file_path).suffix
         resp =self._client.api_call(
             'files.upload',
             channels=channel,
-            filename='pic.jpg',
+            filename=filename,
             file=open(file_path, 'rb'),
             initial_comment=message
 
@@ -79,4 +81,5 @@ class Guppi:
 
 if __name__ == '__main__':
     g = Guppi()
-    g.send('TEST', 'guppi')
+    #g.send('TEST', 'guppi')
+    g.send_file('/home/martin/Desktop/models/darknet/az_v9/summary.txt', 'guppi', 'Precision-Recall plot')
